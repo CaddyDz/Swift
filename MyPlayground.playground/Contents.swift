@@ -31,3 +31,13 @@ var canVote: Bool = true
 
 // Characters
 var myGrade: Character = "A"
+
+// Casting
+var three: Double = 3.0
+var two: Int = 2
+
+// This would be an error without the cast
+var five = three + Double(two)
+
+// Cast to Int
+
