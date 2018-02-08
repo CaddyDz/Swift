@@ -6,7 +6,21 @@ import Darwin
 
 var age: Int = 8
 
-// ----- TERNARY OPERATOR -----
-// Assigns 1 of 2 values depending on condition
+// ----- SWITCH -----
+// Matches a limited number of values and doesn't all throught after a match
 
-var canDrive: Bool = age >= 16 ? true : false
+let ingredient = "pasta"
+
+switch ingredient {
+    // Matches for tomatoes or pasta
+    case "tomatoes", "pasta":
+        print("Spaghetti")
+        // fallthrough matches the next case even if there is no match
+        fallthrough
+    case "beans":
+        print("Burrito")
+    case "potatoes":
+        print("Mashed Potatoes")
+    default:
+        print("Water")
+}
