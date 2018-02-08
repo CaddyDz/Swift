@@ -40,4 +40,4 @@ var two: Int = 2
 var five = three + Double(two)
 
 // Cast to Int
-
+print("3: \(Int(3.14))")
