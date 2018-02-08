@@ -1,6 +1,7 @@
-// Single Line Comment
+import Cocoa
+import Darwin
 
-/*
- Multiline
- Comment
- */
+var hello = "Hello "
+var world = "World"
+var msg = hello + world
+print("Hello \(world)")
