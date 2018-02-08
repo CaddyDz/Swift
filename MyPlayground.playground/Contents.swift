@@ -4,40 +4,32 @@ import Cocoa
 // Other random functions I need
 import Darwin
 
-// ----- DATA TYPES -----
+// ----- CONDITIONALS -----
 
-// Use let to define a constant
-let pi = 3.14159265359
+// ----- IF / ELSE -----
 
-// Declare an int
-var myAge: Int = 42
+// Comparison Operators : > < >= <= == !=
+// === : Checks if pointing to same reference
+// !== : Checks if don't point at same reference
 
-// Min and Max Integer Size
-print("Min Int \(Int64.min)")
-print("Max Int \(Int64.max)")
+var age: Int = 8
 
-var pi2: Float = 3.1415
-var pi3: Double = 3.1415
+if age < 5 {
+    print("Go to Preschool")
+} else if age == 5 {
+    print("Go to Kindergarten")
+} else if (age > 5) && (age <= 18) {
+    var grade: Int = age - 5
+    print("Go to Grade \(grade)")
+} else {
+    print("Go to College")
+}
 
-// Min and Max Doubles
-print("Min Double \(DBL_MIN)")
-print("Max Double \(DBL_MAX)")
+// Or logical operator
+var income: Double = 12000
+var gpa: Double = 3.7
 
-// Max Float
-print("Max Float \(Float.greatestFiniteMagnitude)")
+print("Get Grant : \((income < 15000) || (gpa >= 3.8))")
 
-// Booleans
-var canVote: Bool = true
-
-// Characters
-var myGrade: Character = "A"
-
-// Casting
-var three: Double = 3.0
-var two: Int = 2
-
-// This would be an error without the cast
-var five = three + Double(two)
-
-// Cast to Int
-print("3: \(Int(3.14))")
+// Not operator
+print("Not True : \(!true)")
