@@ -4,15 +4,30 @@ import Cocoa
 // Other random functions I need
 import Darwin
 
-// var declares this string variable
-// Statements don't require ;
-var hello = "Hello "
+// ----- DATA TYPES -----
 
-// You can define it is a string
-var world: String = "World"
+// Use let to define a constant
+let pi = 3.14159265359
 
-// Combine strings
-var msg = hello + world
+// Declare an int
+var myAge: Int = 42
 
-// You can place variables in print
-print("Hello \(world)")
+// Min and Max Integer Size
+print("Min Int \(Int64.min)")
+print("Max Int \(Int64.max)")
+
+var pi2: Float = 3.1415
+var pi3: Double = 3.1415
+
+// Min and Max Doubles
+print("Min Double \(DBL_MIN)")
+print("Max Double \(DBL_MAX)")
+
+// Max Float
+print("Max Float \(Float.greatestFiniteMagnitude)")
+
+// Booleans
+var canVote: Bool = true
+
+// Characters
+var myGrade: Character = "A"
