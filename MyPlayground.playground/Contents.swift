@@ -4,23 +4,22 @@ import Cocoa
 // Other random functions I need
 import Darwin
 
-var age: Int = 8
-
 // ----- SWITCH -----
-// Matches a limited number of values and doesn't all throught after a match
+// Matches a limited number of values and doesn't all
+// through after a match
 
-let ingredient = "pasta"
+// You can also match ranges
+let testScore: Int = 89
 
-switch ingredient {
-    // Matches for tomatoes or pasta
-    case "tomatoes", "pasta":
-        print("Spaghetti")
-        // fallthrough matches the next case even if there is no match
-        fallthrough
-    case "beans":
-        print("Burrito")
-    case "potatoes":
-        print("Mashed Potatoes")
+switch testScore {
+    case 93...100:
+        print("You got an A")
+    case 85...92:
+        print("You got a B")
+    case 77...84:
+        print("You got a C")
+    case 69...76:
+        print("You got a D")
     default:
-        print("Water")
+        print("You got an F")
 }
