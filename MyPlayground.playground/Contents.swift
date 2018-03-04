@@ -4,44 +4,51 @@ import Cocoa
 // Other random functions I need
 import Darwin
 
-// ----- STRINGS -----
-// A string of characters that are passed by value
-// Escape Characters : \\ \t \n \" \'
-var randStr = "This is a random string"
-var randStr2 = " and here is another"
+// ----- ARRAYS -----
+// Stores values of the same type
 
-// Join strings
-var randStr3 = randStr + randStr2
+// Make empty array
+var array1 = [Int]()
 
-// String length
-print("Length : \(randStr3.characters.count)")
+// Check if array is empty
+print("Empty \(array1.isEmpty)")
 
-// Get the first character
-print("First : \(randStr3[randStr3.startIndex])")
+// Add value to array
+array1.append(5)
 
-// Get the 5th character
-let index5 = randStr3.index(randStr3.startIndex, offsetBy: 5)
-print("5th : \(randStr3[index5])")
+// Add another item
+array1 += [7, 9]
 
-// Check if string is empty
-print("Empty : \(randStr.isEmpty)")
+// Get array item
+print("Index 1 : \(array1[1])")
 
-// Insert a character at an index
-randStr2.insert("A", at: randStr2.startIndex)
+// Change value at index
+array1[0] = 4
 
-// Insert a string at an index
-randStr2.insert(contentsOf: " string ".characters, at: randStr2.index(randStr2.startIndex, offsetBy: 2))
-print(randStr2)
+// Insert at an index
+array1.insert(10, at: 3)
 
-// Get a substring
-let startIndex = randStr2.index(randStr2.startIndex, offsetBy: 2)
-let endIndex = randStr2.index(randStr2.startIndex, offsetBy: 9)
-let stringRange = startIndex ..< endIndex
-let subStr = randStr2.substring(with: stringRange)
+// Remove item
+array1.remove(at: 3)
 
-// Replace a string
-// Check if there is a match
-if let hereMatch = randStr2.range(of: "here"){
-    randStr2.replaceSubrange(hereMatch, with: "there")
+// Change multiple values
+array1[0...2] = [1,2,3]
+
+// Length of array
+print("Length : \(array1.count)")
+
+// Fill array with a value
+var array2 = Array(repeating: 0, count: 5)
+
+// Combine arrays
+var array3 = array1 + array2
+
+// Iterate through an array
+for item in array3 {
+    print(item)
 }
-print(randStr2)
+
+// Get index and value
+for (index, value) in array3.enumerated() {
+    print("\(index) : \(value)")
+}
