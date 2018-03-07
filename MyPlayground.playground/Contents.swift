@@ -4,19 +4,28 @@ import Cocoa
 // Other random functions I need
 import Darwin
 
-// ----- TUPLES -----
-// Tuples are finite group of value that are related
+// ----- OPTIONAL -----
+// Optionals are used to indicate that there may not be a value.
+// Everything that can have a value of nil should be declared optional
 
-let height: Double = 6.25
-let weight: Int = 175
+// Declare an optional
+var politicalParty: String?
+politicalParty = "Independent"
 
-// Create a tuple
-let myData = (height, weight)
+// Check for nil
+if politicalParty != nil {
+    
+    // Get the value (Forced Unwrapping)
+    let party = politicalParty!
+    print("Party : \(party)")
+}
 
-// Access values
-print("Height : \(myData.0)")
+// Optional binding is used to check if an optional has a value
+if let party = politicalParty {
+    print("Party : \(party)")
+} else {
+    print("No Party")
+}
 
-// You can name values
-let myData2 = (height: 6.25, weight: 175)
-
-print("Weight : \(myData2.weight)")
+// If nil use coalescing operator to assign a value
+let party = politicalParty ?? "No Party"
