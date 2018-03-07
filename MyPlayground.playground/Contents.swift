@@ -4,56 +4,39 @@ import Cocoa
 // Other random functions I need
 import Darwin
 
-// ----- LOOPING -----
+// ----- DICTIONARIES -----
+// Stores unordered lists of key value pairs
 
-// ----- FOR LOOP ------
+// Create empty dictionary
+var dict1 = [Int: String]()
 
-var array4 = [1, 2, 3]
+// Check if empty
+print("Empty : \(dict1.isEmpty)")
 
-// Iterate through array
-for item in array4 {
-    print(item)
+// Create an item with index of 1
+dict1[1] = "Paul Smith"
+
+// Create a dictionary with a string key
+var cust: [String: String] = ["1": "Sally Marks", "2": "Paul Marks"]
+
+// Size of dictionary
+print("Size : \(cust.count)")
+
+// Add an item
+cust["3"] = "Doug Holmes"
+
+// Change a value
+cust["3"] = "Doug Marks"
+
+// Get a value
+if let name = cust["3"] {
+    print("Index 3 : \(name)")
 }
 
-// Iterate with a range
-for i in 1...5 {
-    print(i)
+// Remove a key value pair
+cust["3"] = nil
+
+// Iterate through a dictionary
+for (key, value) in cust {
+    print("\(key) : \(value)")
 }
-
-// ----- WHERE -----
-// Print only evens
-for i in 1...10 where i % 2 == 0 {
-    print("Even : \(i)")
-}
-
-// ----- WHILE LOOP -----
-var i: Int = 1
-while i < 10 {
-    if i % 2 == 0 {
-        i += 1
-        // Continue jumps back to the beginning of the loop
-        continue
-    }
-    if i == 7 {
-        
-        // Break ends the loop
-        break
-    }
-    
-    print(i)
-    i += 1
-}
-
-// ----- REPEAT WHILE -----
-
-// Generate a random number
-let magicNum: UInt32 = arc4random_uniform(10)
-var guess: UInt32 = 0
-
-repeat {
-    print("Guess : \(guess)")
-    guess += 1
-} while (magicNum != guess)
-
-print("Magic Number was \(magicNum)")
-
