@@ -4,13 +4,14 @@ import Cocoa
 // Other random functions I need
 import Darwin
 
-// ----- FILTER -----
-// Used to filter out values in an array
+// ----- REDUCE -----
+// Reduces array values into one value
+
 let nums2 = [1, 2, 3, 4, 5, 6]
 
-let evenNums = nums2.filter {
-    (num: Int) -> Bool in
-    return num % 2 == 0
+let sum2 = nums2.reduce(0) {
+    (x: Int, y: Int) -> Int in
+    return x + y
 }
 
-print(evenNums) 
+print(sum2)
