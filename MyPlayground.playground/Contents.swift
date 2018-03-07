@@ -4,53 +4,66 @@ import Cocoa
 // Other random functions I need
 import Darwin
 
-// ----- FUNCTIONS -----
+// ----- CLOSURES -----
+// Closures are functions that don't require a name or functions definition
 
-// Define your parameter types
-func getSum(num1: Int, num2: Int) {
-    print("Sum : \(num1 + num2)")
+// A closure that excepts and returns an Int
+var square: (Int) -> (Int) = {
+    num in
+    return num * num
 }
 
-getSum(num1: 5, num2: 6)
+print("5 Quared : \(square(5))")
 
-// Define your return type and you can define default values
-func getSum2(num1: Int, num2: Int = 1) -> Int {
-    return num1 + num2
+// Assign a closure to another variable
+var squareCopy = square
+print("5 Quared : \(squareCopy(5))")
+
+// You can reference any values outside the closure
+let numbers = [8, 9, 2, 4, 1, 0, 7]
+
+// Create a function that returns a Bool stating if 1 value is greater than the other
+
+let sortedNums = numbers.sorted(by: {
+    x, y in x < y
+})
+
+for i in sortedNums {
+    print(i)
 }
 
+// Square every item in an array with map
+// map excepts a closure
 
-print("Sum : \(getSum2(num1: 8, num2: 6))")
-
-// A variadic parameter allows for an unknown number of parameters
-func getSum3(nums: Int...) -> Int {
-    var sum: Int = 0
-    for num in nums {
-        sum += num
-    }
-    return sum
+let squareNums = numbers.map {
+    (num: Int) -> String in
+    "\(num * num)"
 }
 
-print("Sum : \(getSum3(nums: 1, 2, 3, 4, 5))")
+print(squareNums)
 
-// Nested functions are only callable by the enclosing function
+// Return a function
 
-func doMath(num1: Double, num2: Double) {
-    func mult() -> Double {
-        return num1 / num2
+func funcMaker(val: Int) -> (Int) -> Int {
+    func addVals(num1: Int) -> Int {
+        return num1 + val
     }
     
-    print("Mult : \(mult())")
+    return addVals
 }
 
-doMath(num1: 5.0, num2: 6.0)
+let add4 = funcMaker(val: 4)
 
-// Return multiple values
-func twoMults(num: Int) -> (two: Int, three: Int) {
-    let two: Int = num * 2
-    let three: Int = num * 3
-    return (two, three)
+print("4 + 5 = \(add4(5))")
+
+// Pass a function as a parameter
+func doMath2(_ mathFunc: (Int, Int) -> Int, val: Int) {
+    print("Sum : \(mathFunc(val, val))")
 }
 
-let mults = twoMults(num: 2)
+func addNums(a: Int, b: Int) -> Int {
+    return a + b
+}
 
-print("2 Mults : \(mults.two), \(mults.three)")
+doMath2(addNums, val: 5)
+
