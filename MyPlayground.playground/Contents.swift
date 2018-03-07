@@ -4,39 +4,19 @@ import Cocoa
 // Other random functions I need
 import Darwin
 
-// ----- DICTIONARIES -----
-// Stores unordered lists of key value pairs
+// ----- TUPLES -----
+// Tuples are finite group of value that are related
 
-// Create empty dictionary
-var dict1 = [Int: String]()
+let height: Double = 6.25
+let weight: Int = 175
 
-// Check if empty
-print("Empty : \(dict1.isEmpty)")
+// Create a tuple
+let myData = (height, weight)
 
-// Create an item with index of 1
-dict1[1] = "Paul Smith"
+// Access values
+print("Height : \(myData.0)")
 
-// Create a dictionary with a string key
-var cust: [String: String] = ["1": "Sally Marks", "2": "Paul Marks"]
+// You can name values
+let myData2 = (height: 6.25, weight: 175)
 
-// Size of dictionary
-print("Size : \(cust.count)")
-
-// Add an item
-cust["3"] = "Doug Holmes"
-
-// Change a value
-cust["3"] = "Doug Marks"
-
-// Get a value
-if let name = cust["3"] {
-    print("Index 3 : \(name)")
-}
-
-// Remove a key value pair
-cust["3"] = nil
-
-// Iterate through a dictionary
-for (key, value) in cust {
-    print("\(key) : \(value)")
-}
+print("Weight : \(myData2.weight)")
