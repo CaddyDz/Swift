@@ -4,28 +4,53 @@ import Cocoa
 // Other random functions I need
 import Darwin
 
-// ----- OPTIONAL -----
-// Optionals are used to indicate that there may not be a value.
-// Everything that can have a value of nil should be declared optional
+// ----- FUNCTIONS -----
 
-// Declare an optional
-var politicalParty: String?
-politicalParty = "Independent"
+// Define your parameter types
+func getSum(num1: Int, num2: Int) {
+    print("Sum : \(num1 + num2)")
+}
 
-// Check for nil
-if politicalParty != nil {
+getSum(num1: 5, num2: 6)
+
+// Define your return type and you can define default values
+func getSum2(num1: Int, num2: Int = 1) -> Int {
+    return num1 + num2
+}
+
+
+print("Sum : \(getSum2(num1: 8, num2: 6))")
+
+// A variadic parameter allows for an unknown number of parameters
+func getSum3(nums: Int...) -> Int {
+    var sum: Int = 0
+    for num in nums {
+        sum += num
+    }
+    return sum
+}
+
+print("Sum : \(getSum3(nums: 1, 2, 3, 4, 5))")
+
+// Nested functions are only callable by the enclosing function
+
+func doMath(num1: Double, num2: Double) {
+    func mult() -> Double {
+        return num1 / num2
+    }
     
-    // Get the value (Forced Unwrapping)
-    let party = politicalParty!
-    print("Party : \(party)")
+    print("Mult : \(mult())")
 }
 
-// Optional binding is used to check if an optional has a value
-if let party = politicalParty {
-    print("Party : \(party)")
-} else {
-    print("No Party")
+doMath(num1: 5.0, num2: 6.0)
+
+// Return multiple values
+func twoMults(num: Int) -> (two: Int, three: Int) {
+    let two: Int = num * 2
+    let three: Int = num * 3
+    return (two, three)
 }
 
-// If nil use coalescing operator to assign a value
-let party = politicalParty ?? "No Party"
+let mults = twoMults(num: 2)
+
+print("2 Mults : \(mults.two), \(mults.three)")
