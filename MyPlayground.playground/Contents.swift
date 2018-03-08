@@ -4,28 +4,29 @@ import Cocoa
 // Other random functions I need
 import Darwin
 
-// ----- ERROR HANDLING -----
-// Used to handle errors gracefully
+// ----- EXTENSIONS -----
+// Extensions add new functionality to existing classes, structs and other types
 
-// Define our error by defining a type of the Error protocol
+// Extend a Double to work with different distance units
+// The Double by default is in meters and we can convert to other types by appending a dot syntax
 
-enum DivisionError: Error {
-    case DivideByZero
-}
-
-// Define we want the error to get thrown from the function
-func divide(num1: Float, num2: Float) throws -> Float {
-    guard num2 != 0.0 else {
-        throw DivisionError.DivideByZero
+extension Double {
+    var km: Double { return self * 1000.0 }
+    var m: Double { return self }
+    var ft: Double { return self * 3.28 }
+    var inch: Double { return self * 39.37 }
+    
+    // Add a method to Double for squares
+    mutating func square() -> Double {
+        let sqr = self * self
+        return sqr
     }
-    return num1/num2
 }
 
-// Wrap code that could trigger an error in a do catch block
-// Catch the error and handle it
+// Convert 1 meter into inches
+let oneMeter = 1.0.inch
+print("One Meter is \(oneMeter) inches")
 
-do {
-    try divide(num1: 4, num2: 0)
-} catch DivisionError.DivideByZero {
-    print("Can't Divide by Zero")
-}
+// Get the square
+var randNum2: Double = 5
+print("Square of 5 : \(randNum2.square())")
