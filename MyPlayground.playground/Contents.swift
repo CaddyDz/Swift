@@ -4,14 +4,21 @@ import Cocoa
 // Other random functions I need
 import Darwin
 
-// ----- REDUCE -----
-// Reduces array values into one value
+// ----- ENUMERATIONS -----
+// Define types with a limited number of cases
 
-let nums2 = [1, 2, 3, 4, 5, 6]
-
-let sum2 = nums2.reduce(0) {
-    (x: Int, y: Int) -> Int in
-    return x + y
+enum Emotion {
+    case joy
+    case anger
+    case fear
+    case disgust
+    case sad
 }
 
-print(sum2)
+var feeling = Emotion.joy
+
+// Change the value
+feeling = .anger
+
+// Check value
+print("Angry : \(feeling == .anger)")
