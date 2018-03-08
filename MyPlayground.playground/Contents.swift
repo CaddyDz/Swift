@@ -4,35 +4,28 @@ import Cocoa
 // Other random functions I need
 import Darwin
 
-// ----- PROTOCOLS -----
-// Protocols are like interfaces in other languages
-// When you adopt a protocol you agree to define the behavior it describes
+// ----- ERROR HANDLING -----
+// Used to handle errors gracefully
 
-protocol Flyable {
-    // Define if getters and setters are available
-    // Put optional before var if you want it to be optional
-    var flies: Bool { get set }
-    
-    // You define the header for a func but nothing else
-    func fly(distMiles: Double) -> String
-    
+// Define our error by defining a type of the Error protocol
+
+enum DivisionError: Error {
+    case DivideByZero
 }
 
-// Adopt multiple protocols class ClassName : prot1, prot2
-class Vehicle : Flyable {
-    var flies: Bool = false
-    var name: String = "No Name"
-    
-    func fly(distMiles: Double) -> String {
-        if (self.flies) {
-            return "\(self.name) flies \(distMiles) miles"
-        } else {
-            return "\(self.name) can't fly"
-        }
+// Define we want the error to get thrown from the function
+func divide(num1: Float, num2: Float) throws -> Float {
+    guard num2 != 0.0 else {
+        throw DivisionError.DivideByZero
     }
+    return num1/num2
 }
 
-var fordF150 = Vehicle()
-fordF150.name = "Ford F-150"
-fordF150.flies = false
-print(fordF150.fly(distMiles: 10))
+// Wrap code that could trigger an error in a do catch block
+// Catch the error and handle it
+
+do {
+    try divide(num1: 4, num2: 0)
+} catch DivisionError.DivideByZero {
+    print("Can't Divide by Zero")
+}
