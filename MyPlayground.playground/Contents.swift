@@ -4,21 +4,22 @@ import Cocoa
 // Other random functions I need
 import Darwin
 
-// ----- ENUMERATIONS -----
-// Define types with a limited number of cases
+// ----- STRUCTS -----
+// Structs group related data together
 
-enum Emotion {
-    case joy
-    case anger
-    case fear
-    case disgust
-    case sad
+struct Rectangle {
+    var height = 0.0
+    var length = 0.0
+    
+    // You can include functions
+    func area() -> Double {
+        let area = height * length
+        return area
+    }
 }
 
-var feeling = Emotion.joy
+// Create a Rectangle
+let myRect = Rectangle(height: 10.0, length: 5.0)
 
-// Change the value
-feeling = .anger
+print("Area : \(myRect.height) * \(myRect.length) = \(myRect.area())")
 
-// Check value
-print("Angry : \(feeling == .anger)")
