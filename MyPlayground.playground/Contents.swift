@@ -40,3 +40,47 @@ class Animal {
 var rover = Animal(name: "Rover", height: 38, weight: 12.7, sound: "Ruff")
 
 rover.getInfo()
+
+// ----- INHERITANCE -----
+class Dog: Animal {
+    
+    // Dog can extend or override methods in Animal
+    // A func marked as final can't be overridden by subclasses
+    
+    final func digHole() {
+        print("\(self.name) digs a hole")
+    }
+    
+    override func getInfo() {
+        
+        // You can call a method in the superclass
+        super.getInfo()
+        print("and digs holes")
+    }
+}
+
+var spot = Dog(name: "Spot", height: 38, weight: 12.7, sound: "Ruff")
+
+// Dog inherits everything in Animal
+spot.getInfo()
+
+spot.digHole()
+
+// You can pass any subclass type and the right method is automatically called
+func printGetInfo(animal: Animal) {
+    animal.getInfo()
+}
+
+printGetInfo(animal: rover)
+printGetInfo(animal: spot)
+
+// You can set and get values with the dot operator
+spot.name = "Doug"
+print(spot.name)
+
+// Testing overloaded methods
+print("2 + 5 = \(spot.getSum(num1: 2, num2: 5))")
+print("2.2 + 5.6 = \(spot.getSum(num1: 2.2, num2: 5.6))")
+
+// Check the class type
+print("Is Spot a Dog : \(spot is Dog)")
