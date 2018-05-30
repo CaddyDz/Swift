@@ -1,8 +1,5 @@
-//: Playground - noun: a place where people can play
-
 import Cocoa
 
-var str = "Hello, playground"
+var last_name = "Djerbouh"
 
-str += "!"
-print(str)
+print(last_name)
