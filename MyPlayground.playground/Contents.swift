@@ -1,5 +1,12 @@
 import Cocoa
 
-var last_name = "Djerbouh"
+let numberOfStopLights: Int = 4
 
-print(last_name)
+var population: Int
+population = 5422
+
+let townName: String = "Knowhere"
+
+let townDescription = "\(townName) has a population of \(population) and \(numberOfStopLights) stop lights"
+
+print(townDescription)
