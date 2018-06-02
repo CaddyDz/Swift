@@ -1,15 +1,18 @@
 import Cocoa
 
-let numberOfStopLights: Int = 4
+var population: Int = 5422
+var message: String
+var hasPostOffice: Bool = true
 
-var population: Int
-population = 5422
+if population < 10000 {
+    message = "\(population) is a small town!"
+} else if population >= 10000 && population < 50000 {
+        message = "\(population) is a medium town!"
+    } else {
+     message = "\(population) is pretty big!"
+    }
+print(message)
 
-var levelOfUnemployment: Double
-levelOfUnemployment = 28.98
-
-let townName: String = "Knowhere"
-
-let townDescription = "\(townName) has a population of \(population) and \(numberOfStopLights) stop lights, it has a level of unemployment of \(levelOfUnemployment)"
-
-print(townDescription)
+if !hasPostOffice {
+    print("Where do we buy stamps?")
+}
