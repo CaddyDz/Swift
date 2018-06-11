@@ -1,6 +1,6 @@
 import Cocoa
 
-var statusCode: Int = 204
+var statusCode: Int = 418
 var errorString: String = "The request failed with the error:"
 switch statusCode {
 case 100, 101:
@@ -18,3 +18,7 @@ case let unknownCode where (unknownCode >= 200 && unknownCode < 300) || unknownC
 default:
     errorString = "Unexpected error encountered."
 }
+let error = (statusCode, errorString)
+
+error.0
+error.1
