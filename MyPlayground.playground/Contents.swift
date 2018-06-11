@@ -18,7 +18,7 @@ case let unknownCode where (unknownCode >= 200 && unknownCode < 300) || unknownC
 default:
     errorString = "Unexpected error encountered."
 }
-let error = (statusCode, errorString)
 
-error.0
-error.1
+let error = (code: statusCode, error: errorString)
+error.code
+error.error
