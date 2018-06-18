@@ -22,8 +22,8 @@ var myRonsList = [
     "Fly hot air balloon to Fiji",
     "Toboggan across Alaska",
     "Go on a walkabout in Australia",
-    "Find a triple rainbow",
     "Scuba dive in the Great Blue Hole",
+    "Find a triple rainbow"
 ]
 
 let equal = (bucketList == myRonsList)
