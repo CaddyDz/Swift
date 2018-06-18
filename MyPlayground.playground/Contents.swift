@@ -15,4 +15,5 @@ print(bucketList.count)
 print(bucketList[0...2])
 bucketList[2] += " in Australia"
 bucketList[0] = "Climb Mt. Kilimanjaro"
+bucketList.insert("Toboggan across Alaska", at: 2)
 bucketList
