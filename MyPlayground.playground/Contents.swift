@@ -8,9 +8,8 @@ var newItems = [
     "Scuba dive in the Great Blue Hole",
     "Find a triple rainbow"
     ]
-for item in newItems {
-    bucketList.append(item)
-}
+bucketList += newItems
+bucketList
 bucketList.remove(at: 2)
 print(bucketList.count)
 print(bucketList[0...2])
