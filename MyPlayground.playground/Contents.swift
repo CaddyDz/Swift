@@ -1,3 +1,3 @@
 import Cocoa
 
-var bucketList: [String]
+var bucketList: [String] = ["Climb Mt. Everest"]
