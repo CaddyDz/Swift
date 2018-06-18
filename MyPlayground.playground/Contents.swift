@@ -17,3 +17,13 @@ bucketList[2] += " in Australia"
 bucketList[0] = "Climb Mt. Kilimanjaro"
 bucketList.insert("Toboggan across Alaska", at: 2)
 bucketList
+var myRonsList = [
+    "Climb Mt. Kilimanjaro",
+    "Fly hot air balloon to Fiji",
+    "Toboggan across Alaska",
+    "Go on a walkabout in Australia",
+    "Find a triple rainbow",
+    "Scuba dive in the Great Blue Hole",
+]
+
+let equal = (bucketList == myRonsList)
