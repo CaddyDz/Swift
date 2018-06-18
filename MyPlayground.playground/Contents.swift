@@ -7,6 +7,8 @@ bucketList.append("Go on a walkabout")
 bucketList.append("Scuba dive in the Great Blue Hole")
 bucketList.append("Find a triple rainbow")
 bucketList.remove(at: 2)
-bucketList
 print(bucketList.count)
 print(bucketList[0...2])
+bucketList[2] += " in Australia"
+bucketList[0] = "Climb Mt. Kilimanjaro"
+bucketList
