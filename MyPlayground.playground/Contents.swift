@@ -12,3 +12,7 @@ errorDescription
 
 upCaseErrorDescription?.append(" Please Try Again.")
 upCaseErrorDescription
+
+errorDescription = nil
+let description = errorDescription ?? "No error"
+
