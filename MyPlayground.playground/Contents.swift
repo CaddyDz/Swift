@@ -8,3 +8,4 @@ bucketList.append("Scuba dive in the Great Blue Hole")
 bucketList.append("Find a triple rainbow")
 bucketList.remove(at: 2)
 bucketList
+print(bucketList.count)
