@@ -9,3 +9,4 @@ bucketList.append("Find a triple rainbow")
 bucketList.remove(at: 2)
 bucketList
 print(bucketList.count)
+print(bucketList[0...2])
