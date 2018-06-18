@@ -1,3 +1,3 @@
 import Cocoa
 
-var bucketList: Array<String>
+var bucketList: [String]
