@@ -21,3 +21,5 @@ for (key, value) in movieRatings {
 for movie in movieRatings.keys {
     print("User has rated \(movie)")
 }
+
+let watchedMovies = Array(movieRatings.keys)
