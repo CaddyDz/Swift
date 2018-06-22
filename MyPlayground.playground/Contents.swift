@@ -35,3 +35,16 @@ func areaOfTriangleWith(base: Double, height: Double) -> Double {
     return divide()
 }
 areaOfTriangleWith(base: 3.0, height: 5.0)
+
+func sortedEvenOddNumbers(_ numbers: [Int]) -> (evens: [Int], odds: [Int]) {
+    var evens = [Int]()
+    var odds = [Int]()
+    for number in numbers {
+        if number % 2 == 0 {
+            evens.append(number)
+        } else {
+            odds.append(number)
+        }
+    }
+    return (evens, odds)
+}
