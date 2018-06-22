@@ -14,4 +14,4 @@ if let lastRating = oldRating, let currentRating = movieRatings["Dark City"] {
     print("Old rating: \(lastRating); current rating: \(currentRating)")
 }
 movieRatings["The Cbinet of Dr? Caligri"] = 5
-movieRatings.removeValue(forKey: "Dark City")
+movieRatings["Dark City"] = nil
