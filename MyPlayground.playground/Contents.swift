@@ -1,16 +1,7 @@
 import Cocoa
 
-var groceryBag: Set = ["Apples", "Oranges", "Pineapple"]
-for food in groceryBag {
-    print(food)
+func printGreeting() {
+    print("Hello, playground.")
 }
-let hasBananas = groceryBag.contains("Bananas")
-let friendsGroceryBag = Set(["Bananas", "Cereal", "Milk", "Oranges"])
-let commonGroceryBag = groceryBag.union(friendsGroceryBag)
 
-let roommatesGroceryBag = Set(["Apples", "Bananas", "Cereal", "Tea"])
-let itemsToReturn = commonGroceryBag.intersection(roommatesGroceryBag)
-
-let yourSecondBag = Set(["Berries", "Yogurt"])
-let roommatesSecondBag = Set(["Grapes", "Honey"])
-let disjoint = yourSecondBag.isDisjoint(with: roommatesSecondBag)
+printGreeting()
