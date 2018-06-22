@@ -15,3 +15,6 @@ if let lastRating = oldRating, let currentRating = movieRatings["Dark City"] {
 }
 movieRatings["The Cbinet of Dr? Caligri"] = 5
 movieRatings["Dark City"] = nil
+for (key, value) in movieRatings {
+    print("The movie \(key) was rated \(value).")
+}
