@@ -1,38 +1,17 @@
 import Cocoa
 
-var bucketList = ["Climb Mt. Everest"]
-var newItems = [
-    "Fly hot air balloon to Fiji",
-    "Watch the Lord of the Rings trilogy in one day",
-    "Go on a walkabout",
-    "Scuba dive in the Great Blue Hole",
-    "Find a triple rainbow"
-    ]
-bucketList += newItems
-bucketList
-bucketList.remove(at: 2)
-print(bucketList.count)
-print(bucketList[0...2])
-bucketList[2] += " in Australia"
-bucketList[0] = "Climb Mt. Kilimanjaro"
-bucketList.insert("Toboggan across Alaska", at: 2)
-bucketList
-var myRonsList = [
-    "Climb Mt. Kilimanjaro",
-    "Fly hot air balloon to Fiji",
-    "Toboggan across Alaska",
-    "Go on a walkabout in Australia",
-    "Scuba dive in the Great Blue Hole",
-    "Find a triple rainbow"
-]
+var movieRatings = ["Donnie Darko": 4, "Chunking Express": 5, "Brave Heart": 10]
 
-let equal = (bucketList == myRonsList)
+print("I have rated \(movieRatings.count) movies.")
 
-let lunches = [
-    "Cheeseburger",
-    "Veggie Pizza",
-    "Chicken Caesar Salad",
-    "Black Bean Burrito",
-    "Falafel Wrap"
-    ]
+let darkoRating = movieRatings["Donnie Darko"]
+movieRatings["Dark City"] = 5
+movieRatings
 
+let oldRating: Int? = movieRatings.updateValue(5, forKey: "Donnie")
+
+if let lastRating = oldRating, let currentRating = movieRatings["Dark City"] {
+    print("Old rating: \(lastRating); current rating: \(currentRating)")
+}
+movieRatings["The Cbinet of Dr? Caligri"] = 5
+movieRatings.removeValue(forKey: "Dark City")
