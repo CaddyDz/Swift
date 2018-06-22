@@ -5,3 +5,9 @@ func printGreeting() {
 }
 
 printGreeting()
+
+func printPersonalGreeting(name: String) {
+    print("Hello \(name), welcome to your playground.")
+}
+
+printPersonalGreeting(name: "Matt")
