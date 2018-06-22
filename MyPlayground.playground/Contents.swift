@@ -62,3 +62,12 @@ let middleName = grabMiddleName(fromFullName: ("Matt", nil, "Mathiaw"))
 if let theName = middleName {
     print(theName)
 }
+
+func greetByMiddleName(fromFullName name: (first: String, middle: String?, last: String)) {
+    guard let middleName = name.middle else {
+        print("Hey there!")
+        return
+    }
+    print("Hey \(middleName)")
+}
+greetByMiddleName(fromFullName: ("Matt", "Danger", "Mathias"))
