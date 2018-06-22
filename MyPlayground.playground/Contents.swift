@@ -6,11 +6,13 @@ func printGreeting() {
 
 printGreeting()
 
-func printPersonalGreeting(to name: String) {
-    print("Hello \(name), welcome to your playground.")
+func printPersonalGreetings(to names: String...) {
+    for name in names {
+        print("Hello \(name), welcome to your playground.")
+    }
 }
 
-printPersonalGreeting(to: "Matt")
+printPersonalGreetings(to: "Ales", "Chris", "Drew", "Pat")
 
 func divisionDescriptionFor(numerator: Double, denominator: Double) {
     print("\(numerator) divided by \(denominator) equals \(numerator / denominator)")
