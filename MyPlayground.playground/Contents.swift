@@ -8,3 +8,7 @@ enum TextAlignment {
 
 var alignment = TextAlignment.left
 alignment = .right
+
+if alignment == .right {
+    print("We should right-align the text!")
+}
