@@ -48,3 +48,16 @@ enum ProgrammingLanguage: String {
 
 let myFavoriteLanguage = ProgrammingLanguage.c
 print("My favorite programming language is \(myFavoriteLanguage)")
+
+enum Lightbulb {
+    case on
+    case off
+    func sufraceTemperature(forAmbientTemperature ambient: Double) -> Double {
+        switch self {
+        case .on:
+            return ambient + 150.0
+        case .off:
+            return ambient
+        }
+    }
+}
