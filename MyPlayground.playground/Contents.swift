@@ -35,3 +35,7 @@ func makePopulationTracker(forInitialPopulation population: Int) -> (Int) -> Int
 
 var currentPopulation = 5422
 let growBy = makePopulationTracker(forInitialPopulation: currentPopulation)
+growBy(500)
+growBy(500)
+growBy(500)
+currentPopulation = growBy(500) // currentPopulation is now 7422
