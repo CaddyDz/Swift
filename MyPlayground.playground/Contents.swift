@@ -1,10 +1,10 @@
 import Cocoa
 
 enum TextAlignment: Int {
-    case left
-    case right
-    case center
-    case justify
+    case left = 20
+    case right = 30
+    case center = 40
+    case justify = 50
 }
 
 var alignment = TextAlignment.justify
