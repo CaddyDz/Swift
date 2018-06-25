@@ -16,7 +16,7 @@ print("Justify has raw value \(TextAlignment.justify.rawValue)")
 print("The alignment variable has raw value \(alignment.rawValue)")
 
 // Create a raw value
-let myRawValue = 20
+let myRawValue = 100
 
 // Try to convert the raw value into a TextAlignment
 if let myAlignment = TextAlignment(rawValue: myRawValue) {
