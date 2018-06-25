@@ -7,3 +7,4 @@ enum TextAlignment {
 }
 
 var alignment = TextAlignment.left
+alignment = .right
