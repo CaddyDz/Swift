@@ -5,3 +5,5 @@ enum TextAlignment {
     case right
     case center
 }
+
+var alignment: TextAlignment = TextAlignment.left
