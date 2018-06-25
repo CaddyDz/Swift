@@ -60,4 +60,18 @@ enum Lightbulb {
             return ambient
         }
     }
+    mutating func toggle() {
+        switch self {
+        case .on:
+            self = .off
+        case .off:
+            self = .on
+        }
+    }
 }
+
+var bulb = Lightbulb.on
+let ambientTemperature = 77.0
+
+var bulbTemperature = bulb.sufraceTemperature(forAmbientTemperature: ambientTemperature)
+print("the bulb's temperature is \(bulbTemperature)")
