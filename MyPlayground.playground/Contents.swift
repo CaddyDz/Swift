@@ -51,3 +51,8 @@ let projectedPopulations = precinctPopulations.map {
     return population * 2
 }
 projectedPopulations
+let bigProjections = projectedPopulations.filter {
+    (projection: Int) -> Bool in
+    return projection > 4000
+}
+bigProjections
