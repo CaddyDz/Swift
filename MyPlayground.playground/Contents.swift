@@ -14,6 +14,6 @@ case .left:
     print("left aligned")
 case .right:
     print("right aligned")
-case .center:
+default:
     print("center aligned")
 }
