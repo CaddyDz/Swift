@@ -37,3 +37,14 @@ case .center:
 case .justify:
     print("justified")
 }
+
+enum ProgrammingLanguage: String {
+    case swift = "swift"
+    case objectiveC = "objective-c"
+    case c = "c"
+    case cpp = "c++"
+    case java = "java"
+}
+
+let myFavoriteLanguage = ProgrammingLanguage.c
+print("My favorite programming language is \(myFavoriteLanguage)")
