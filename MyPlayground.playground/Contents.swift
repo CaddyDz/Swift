@@ -23,3 +23,15 @@ if let newTownPlanByAddingLightsToExistingLights = makeTownGrand(withBudget: 105
     stopLights = newTownPlanByAddingLightsToExistingLights(4, stopLights)
 }
 print("Knowhere has \(stopLights) stoplights.")
+
+func makePopulationTracker(forInitialPopulation population: Int) -> (Int) -> Int{
+    var totalPopulation = population
+    func populationTracker(growth: Int) -> Int {
+        totalPopulation += growth
+        return totalPopulation
+    }
+    return populationTracker
+}
+
+var currentPopulation = 5422
+let growBy = makePopulationTracker(forInitialPopulation: currentPopulation)
