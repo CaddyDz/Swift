@@ -45,3 +45,5 @@ var bigCityPopulation = 4_061_981
 let bigCityGrowBy = makePopulationTracker(forInitialPopulation: bigCityPopulation)
 bigCityPopulation = bigCityGrowBy(10_000)
 currentPopulation
+let precinctPopulations = [1244, 2021, 2157]
+
