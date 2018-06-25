@@ -39,9 +39,9 @@ case .justify:
 }
 
 enum ProgrammingLanguage: String {
-    case swift = "swift"
+    case swift
     case objectiveC = "objective-c"
-    case c = "c"
+    case c
     case cpp = "c++"
     case java = "java"
 }
