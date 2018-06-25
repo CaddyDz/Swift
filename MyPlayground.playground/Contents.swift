@@ -10,3 +10,8 @@ func makeTownGrand() -> (Int, Int) -> Int {
     }
     return buildRoads
 }
+
+var stopLights = 4
+let townPlanByAddingLightsToExistingLights = makeTownGrand()
+stopLights = townPlanByAddingLightsToExistingLights(4, stopLights)
+print("Knowhere has \(stopLights) stoplights.")
