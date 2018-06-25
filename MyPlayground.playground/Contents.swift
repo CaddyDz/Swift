@@ -75,3 +75,6 @@ let ambientTemperature = 77.0
 
 var bulbTemperature = bulb.sufraceTemperature(forAmbientTemperature: ambientTemperature)
 print("the bulb's temperature is \(bulbTemperature)")
+bulb.toggle()
+bulbTemperature = bulb.sufraceTemperature(forAmbientTemperature: ambientTemperature)
+print("the bulb's temperature is \(bulbTemperature)")
