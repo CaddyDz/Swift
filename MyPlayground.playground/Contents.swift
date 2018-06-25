@@ -1,6 +1,6 @@
 import Cocoa
 
-enum TextAlignment {
+enum TextAlignment: Int {
     case left
     case right
     case center
