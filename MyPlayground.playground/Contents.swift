@@ -39,3 +39,5 @@ growBy(500)
 growBy(500)
 growBy(500)
 currentPopulation = growBy(500) // currentPopulation is now 7422
+let anotherGrowBy = growBy
+anotherGrowBy(500) // totalPopulation now equal to 7922
