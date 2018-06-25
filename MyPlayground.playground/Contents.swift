@@ -41,3 +41,7 @@ growBy(500)
 currentPopulation = growBy(500) // currentPopulation is now 7422
 let anotherGrowBy = growBy
 anotherGrowBy(500) // totalPopulation now equal to 7922
+var bigCityPopulation = 4_061_981
+let bigCityGrowBy = makePopulationTracker(forInitialPopulation: bigCityPopulation)
+bigCityPopulation = bigCityGrowBy(10_000)
+currentPopulation
