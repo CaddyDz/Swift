@@ -4,10 +4,10 @@ enum TextAlignment {
     case left
     case right
     case center
+    case justify
 }
 
-var alignment = TextAlignment.left
-alignment = .right
+var alignment = TextAlignment.justify
 
 switch alignment {
 case .left:
